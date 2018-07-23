@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context="com.alex.car.MainActivity">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/vinEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:hint="Введите VIN"
+        android:inputType="textCapCharacters"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        app:met_baseColor="@color/colorWhite"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="17"
+        app:met_helperTextColor="@color/colorAccent"
+        app:met_primaryColor="@color/colorGreen"
+        app:met_floatingLabelTextSize="14sp"
+        app:met_bottomTextSize="14sp"
+        app:met_textColorHint="@color/colorWhite"/>
+
+    <Button
+        android:id="@+id/vinSend"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отправить"/>
+
+</LinearLayout>

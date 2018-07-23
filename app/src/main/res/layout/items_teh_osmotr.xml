@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/tehOsmDataDiagnost"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Дата диагностики"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/tehOsmDataDiagnost1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tehOsmTipDocumenta"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Тип документа"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/tehOsmTipDocumenta1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tehOsmNumber"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Номер"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/tehOsmNumber1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tehOsmVINTC"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VIN TC"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/tehOsmVINTC1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tehOsmNumberCusovaTC"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Номер кузова ТС"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/tehOsmNumberCusovaTC1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tehOsmRegNumber"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Рег. номер"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/tehOsmRegNumber1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tehOsmSrokDeistvija"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Срок действия"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/tehOsmSrokDeistvija1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"/>
+
+</LinearLayout>

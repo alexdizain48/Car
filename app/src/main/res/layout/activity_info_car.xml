@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.alex.car.InfoCar">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|snap"
+            app:layout_collapseMode="pin"
+            app:contentInsetStartWithNavigation="0dp"
+            android:background="@color/colorBgDark"
+            app:titleTextColor="@android:color/white"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </android.support.v7.widget.Toolbar>
+
+
+            <LinearLayout
+                android:id="@+id/main_linearlayout_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingBottom="27dp">
+
+                <TextView
+                    android:id="@+id/modelAuto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:text="MAZDA"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="20dp"
+                        android:text="VIN"/>
+
+                    <TextView
+                        android:id="@+id/codVIN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:text="WWEFSFRFWRSFWR"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="20dp"
+                        android:text="Год"/>
+
+                    <TextView
+                        android:id="@+id/godVipusk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:text="2012"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_masters_procedues"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:clipToPadding="false"
+        app:behavior_overlapTop="10dp"
+        android:scrollbars="none"
+        android:scrollingCache="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+
+
+           <!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorGray"
+                            android:layout_marginBottom="1dp">
+
+                <RelativeLayout
+                    android:id="@+id/btnExpanableTehnHarakt"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/arrow_down"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textHeader"
+                    android:padding="6dp"
+                    android:textSize="18sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Технические характеристики"/>
+
+
+
+                <com.github.aakira.expandablelayout.ExpandableLinearLayout
+                    android:id="@+id/expanableTehnHarakt"
+                    android:layout_below="@+id/textHeader"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    app:ael_duration="200"
+                    app:ael_expanded="false"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    app:ael_interpolator="decelerate">
+
+                    <TextView
+                        android:id="@+id/tipDvigatel"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Тип двигателя"/>
+
+                    <TextView
+                        android:id="@+id/textChild"
+                        android:textSize="18sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Бензиновый"/>
+
+                </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+            </RelativeLayout>-->
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btnOpenTehnHarakter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    app:cardBackgroundColor="@color/colorPrimaryLight"
+                    app:cardCornerRadius="3dp">
+
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="7dp"
+                            android:paddingTop="7dp">
+
+                            <ImageView
+                                android:id="@+id/ic_techharact"
+                                android:layout_width="34dp"
+                                android:layout_height="26dp"
+                                android:layout_marginStart="8dp"
+                                android:background="@drawable/ic_techharact"
+                                android:scaleType="fitXY"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/textHeadTehnHarakter"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Технические характеристики"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/ic_techharact"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <ImageView
+                                android:id="@+id/view"
+                                android:layout_width="20dp"
+                                android:layout_height="24dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/chevron_right"
+                                android:scaleType="fitXY"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.516"/>
+
+                        </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <com.github.aakira.expandablelayout.ExpandableLinearLayout
+                    android:id="@+id/expanableTehnHarakt"
+                    android:layout_below="@+id/btnOpenTehnHarakter"
+                    android:layout_marginTop="-3dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:ael_duration="200"
+                    app:ael_expanded="false"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="8dp"
+                    app:ael_interpolator="decelerate">
+
+                    <TextView
+                        android:id="@+id/tipDvigatel"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:text="Тип двигателя"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/tipDvigatel1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@color/colorWhite"
+                        android:text="Бензиновый"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/moschnost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:text="Мощность двигателя"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/moschnost1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@color/colorWhite"
+                        android:text="77/104.7"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:id="@+id/objemDwigat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:text="Объем двигателя"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/objemDwigat1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@color/colorWhite"
+                        android:text="1598"
+                        android:textSize="16sp"/>
+
+                </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btnOpenProbeg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    app:cardBackgroundColor="@color/colorPrimaryLight"
+                    app:cardCornerRadius="3dp">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="7dp">
+
+                        <ImageView
+                            android:id="@+id/is_speed"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/ic_speed"
+                            android:scaleType="fitXY"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.466"/>
+
+
+                        <TextView
+                            android:id="@+id/textHeadProbeg"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Пробег"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/is_speed"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/view1"
+                            android:layout_width="20dp"
+                            android:layout_height="24dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/chevron_right"
+                            android:scaleType="fitXY"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <com.github.aakira.expandablelayout.ExpandableLinearLayout
+                    android:id="@+id/expanableProbeg"
+                    android:layout_below="@+id/btnOpenProbeg"
+                    android:layout_marginTop="-3dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:ael_duration="200"
+                    app:ael_expanded="false"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="8dp"
+                    app:ael_interpolator="decelerate">
+
+                    <TextView
+                        android:id="@+id/dataFixacii"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:text="Дата фиксации"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/dataFixacii1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@color/colorWhite"
+                        android:text="12.05.2017"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/probegZnachenije"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:text="Показания"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/probegZnachenije1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/btnExpanableTehnHarakt"
+                        android:layout_alignParentTop="true"
+                        android:textColor="@color/colorWhite"
+                        android:text="20000"
+                        android:textSize="15sp"/>
+
+                </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btnOpenTehOsmotr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    app:cardBackgroundColor="@color/colorPrimaryLight"
+                    app:cardCornerRadius="3dp">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="7dp">
+
+                        <ImageView
+                            android:id="@+id/ic_tehosmotr"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/ic_tehosmotr"
+                            android:scaleType="fitXY"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.466"/>
+
+                        <TextView
+                            android:id="@+id/textHeadTehOsmotr"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Данные тех. осмотра"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ic_tehosmotr"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/view2"
+                            android:layout_width="20dp"
+                            android:layout_height="24dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/chevron_right"
+                            android:scaleType="fitXY"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <com.github.aakira.expandablelayout.ExpandableLinearLayout
+                    android:id="@+id/expanableTehOsmotr"
+                    android:layout_below="@+id/btnOpenTehOsmotr"
+                    android:layout_marginTop="-3dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:ael_duration="200"
+                    app:ael_expanded="false"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="8dp"
+                    app:ael_interpolator="decelerate">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycleTehOsmotr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </android.support.v7.widget.RecyclerView>
+
+                </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
