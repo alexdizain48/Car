@@ -47,8 +47,8 @@ public class InfoCar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (!isConnected(InfoCar.this)) buildDialog(InfoCar.this).show();
-        else {
+       // if (!isConnected(InfoCar.this)) buildDialog(InfoCar.this).show();
+        //else {
             setContentView(R.layout.activity_info_car);
 
            // ic_tehosmotr = (ImageView) findViewById(R.id.ic_tehosmotr);
@@ -93,9 +93,10 @@ public class InfoCar extends AppCompatActivity {
 
             setData();
         }
-    }
 
-    public boolean isConnected(Context context) {
+
+
+    /*public boolean isConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netinfo = cm.getActiveNetworkInfo();
 
@@ -123,7 +124,7 @@ public class InfoCar extends AppCompatActivity {
         });
 
         return builder;
-    }
+    }*/
 
     private void setData() {
         mTehOsmotrList = new ArrayList<>();
