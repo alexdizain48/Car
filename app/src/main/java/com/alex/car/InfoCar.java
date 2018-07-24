@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.alex.car.Data.Item;
 import com.alex.car.Data.TehOsmotr;
@@ -47,6 +48,7 @@ public class InfoCar extends AppCompatActivity {
     ImageView ic_tehosmotr, is_speed;
     private Boolean payment;
     Button buy;
+    TextView textHeadProbeg;
 
 
     @Override
@@ -56,6 +58,8 @@ public class InfoCar extends AppCompatActivity {
         //else {
             setContentView(R.layout.activity_info_car);
 
+            textHeadProbeg = (TextView) findViewById(R.id.textHeadProbeg);
+
             expanableTehnHarakt = (ExpandableLinearLayout) findViewById(R.id.expanableTehnHarakt);
             expanableProbeg = (ExpandableLinearLayout) findViewById(R.id.expanableProbeg);
             expanableTehOsmotr = (ExpandableLinearLayout) findViewById(R.id.expanableTehOsmotr);
@@ -63,13 +67,6 @@ public class InfoCar extends AppCompatActivity {
             btnOpenTehnHarakter = (CardView) findViewById(R.id.btnOpenTehnHarakter);
             btnOpenProbeg = (CardView) findViewById(R.id.btnOpenProbeg);
             btnOpenTehOsmotr = (CardView) findViewById(R.id.btnOpenTehOsmotr);
-
-            overlayColorTehosmotr = getResources().getDrawable(R.drawable.ic_tehosmotr);
-            wrap = DrawableCompat.wrap(overlayColorTehosmotr);
-            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
-            overlayColor = getResources().getDrawable(R.drawable.ic_speed);
-            wrap = DrawableCompat.wrap(overlayColor);
-            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
 
             btnOpenTehnHarakter.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -80,30 +77,71 @@ public class InfoCar extends AppCompatActivity {
 
             buy = (Button) findViewById(R.id.buy);
 
-            buy.setOnClickListener(new View.OnClickListener() {
+
+
+            setData();
+            redIcons(false);
+
+        buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redIcons(true);
+                buy.setVisibility(View.GONE);
+            }
+        });
+
+    }
+
+    private void redIcons(boolean IsPayment) {
+
+        if (!IsPayment) {
+
+            textHeadProbeg.setTextColor(0xFFE8465E);
+
+            btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            expanableProbeg.toggle();
-                        }
-                    });
-
-                    btnOpenTehOsmotr.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            expanableTehOsmotr.toggle();
-                        }
-                    });
-                   // Intent intent = new Intent(InfoCar.this, PaymentActivity.class);
-                   // startActivity(intent);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(InfoCar.this);
+                    builder.setTitle("Информация будет доступна в полном отчете")
+                            .setCancelable(false)
+                            .setNegativeButton("ОК",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
                 }
             });
 
-            setData();
-           // redIcons(true);
+            /*overlayColorTehosmotr = getResources().getDrawable(R.drawable.ic_tehosmotr);
+            wrap = DrawableCompat.wrap(overlayColorTehosmotr);
+            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
+            overlayColor = getResources().getDrawable(R.drawable.ic_speed);
+            wrap = DrawableCompat.wrap(overlayColor);
+            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));*/
+
+        } else {
+
+            textHeadProbeg.setTextColor(0xFFFFFFFF);
+
+                btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        expanableProbeg.toggle();
+                    }
+                });
+
+                btnOpenTehOsmotr.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        expanableTehOsmotr.toggle();
+                    }
+                });
         }
+
+    }
 
 
     /*public boolean isConnected(Context context) {
