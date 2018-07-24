@@ -2,6 +2,7 @@ package com.alex.car;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
@@ -18,6 +19,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -43,6 +45,9 @@ public class InfoCar extends AppCompatActivity {
     Context context;
     Drawable overlayColorTehosmotr, wrap, overlayColor;
     ImageView ic_tehosmotr, is_speed;
+    private Boolean payment;
+    Button buy;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +55,6 @@ public class InfoCar extends AppCompatActivity {
        // if (!isConnected(InfoCar.this)) buildDialog(InfoCar.this).show();
         //else {
             setContentView(R.layout.activity_info_car);
-
-           // ic_tehosmotr = (ImageView) findViewById(R.id.ic_tehosmotr);
-
-            overlayColorTehosmotr = getResources().getDrawable(R.drawable.ic_tehosmotr);
-            wrap = DrawableCompat.wrap(overlayColorTehosmotr);
-            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
-            overlayColor = getResources().getDrawable(R.drawable.ic_speed);
-            wrap = DrawableCompat.wrap(overlayColor);
-            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
-
 
             expanableTehnHarakt = (ExpandableLinearLayout) findViewById(R.id.expanableTehnHarakt);
             expanableProbeg = (ExpandableLinearLayout) findViewById(R.id.expanableProbeg);
@@ -69,6 +64,12 @@ public class InfoCar extends AppCompatActivity {
             btnOpenProbeg = (CardView) findViewById(R.id.btnOpenProbeg);
             btnOpenTehOsmotr = (CardView) findViewById(R.id.btnOpenTehOsmotr);
 
+            overlayColorTehosmotr = getResources().getDrawable(R.drawable.ic_tehosmotr);
+            wrap = DrawableCompat.wrap(overlayColorTehosmotr);
+            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
+            overlayColor = getResources().getDrawable(R.drawable.ic_speed);
+            wrap = DrawableCompat.wrap(overlayColor);
+            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
 
             btnOpenTehnHarakter.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -77,23 +78,32 @@ public class InfoCar extends AppCompatActivity {
                 }
             });
 
-            btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    expanableProbeg.toggle();
-                }
-            });
+            buy = (Button) findViewById(R.id.buy);
 
-            btnOpenTehOsmotr.setOnClickListener(new View.OnClickListener() {
+            buy.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    expanableTehOsmotr.toggle();
+                    btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            expanableProbeg.toggle();
+                        }
+                    });
+
+                    btnOpenTehOsmotr.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            expanableTehOsmotr.toggle();
+                        }
+                    });
+                   // Intent intent = new Intent(InfoCar.this, PaymentActivity.class);
+                   // startActivity(intent);
                 }
             });
 
             setData();
+           // redIcons(true);
         }
-
 
 
     /*public boolean isConnected(Context context) {
@@ -145,7 +155,6 @@ public class InfoCar extends AppCompatActivity {
         recycleTehOsmotr.setAdapter(mAdapterTehOsmotr);
 
         DividerItemDecoration dividerTehOsmotrItem = new DividerItemDecoration(recycleTehOsmotr.getContext(), LinearLayoutManager.VERTICAL);
-        //Drawable drawable= ContextCompat.getDrawable(getContext(), R.drawable.divider);
         Drawable drawable = ContextCompat.getDrawable(getBaseContext(), R.drawable.divider);
         if(drawable!=null)
             dividerTehOsmotrItem.setDrawable(drawable);
