@@ -4,6 +4,7 @@
     <color name="colorBgDark">#38393d</color>
     <color name="colorPrimaryLight">#5b6b82</color>
     <color name="colorAccent">#e8465e</color>
+    <color name="colorAccentDark">#680a19</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorGreen">#2be1e2</color>
     <color name="colorGreenDisable">#6ebebebe</color>

@@ -17,12 +17,10 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Spannable;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alex.car.Data.Item;
@@ -48,7 +46,7 @@ public class InfoCar extends AppCompatActivity {
     ImageView ic_tehosmotr, is_speed;
     private Boolean payment;
     Button buy;
-    TextView textHeadProbeg;
+    TextView textHeadProbeg, textHeadTehOsmotr;
 
 
     @Override
@@ -58,12 +56,16 @@ public class InfoCar extends AppCompatActivity {
         //else {
             setContentView(R.layout.activity_info_car);
 
+
+
             textHeadProbeg = (TextView) findViewById(R.id.textHeadProbeg);
+            textHeadTehOsmotr = (TextView) findViewById(R.id.textHeadTehOsmotr);
 
             expanableTehnHarakt = (ExpandableLinearLayout) findViewById(R.id.expanableTehnHarakt);
             expanableProbeg = (ExpandableLinearLayout) findViewById(R.id.expanableProbeg);
             expanableTehOsmotr = (ExpandableLinearLayout) findViewById(R.id.expanableTehOsmotr);
 
+            buy = (Button) findViewById(R.id.buy);
             btnOpenTehnHarakter = (CardView) findViewById(R.id.btnOpenTehnHarakter);
             btnOpenProbeg = (CardView) findViewById(R.id.btnOpenProbeg);
             btnOpenTehOsmotr = (CardView) findViewById(R.id.btnOpenTehOsmotr);
@@ -75,10 +77,7 @@ public class InfoCar extends AppCompatActivity {
                 }
             });
 
-            buy = (Button) findViewById(R.id.buy);
-
-
-
+            initToolbar();
             setData();
             redIcons(false);
 
@@ -90,41 +89,58 @@ public class InfoCar extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void initToolbar() {
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            mToolbar.setTitle("Информация");
+        }
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     private void redIcons(boolean IsPayment) {
 
         if (!IsPayment) {
 
-            textHeadProbeg.setTextColor(0xFFE8465E);
+            textHeadProbeg.setTextColor(0xFF680A19);
+            textHeadTehOsmotr.setTextColor(0xFF680A19);
 
             btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(InfoCar.this);
-                    builder.setTitle("Информация будет доступна в полном отчете")
-                            .setCancelable(false)
-                            .setNegativeButton("ОК",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            dialog.cancel();
-                                        }
-                                    });
-                    AlertDialog alert = builder.create();
-                    alert.show();
+                    dialogShow();
+                }
+            });
+            btnOpenTehOsmotr.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialogShow();
                 }
             });
 
-            /*overlayColorTehosmotr = getResources().getDrawable(R.drawable.ic_tehosmotr);
+            /*overlayColorTehosmotr = getResources().getDrawable(R.drawable.tehosmotr);
             wrap = DrawableCompat.wrap(overlayColorTehosmotr);
             DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
-            overlayColor = getResources().getDrawable(R.drawable.ic_speed);
+            overlayColor = getResources().getDrawable(R.drawable.probeg);
             wrap = DrawableCompat.wrap(overlayColor);
             DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));*/
 
         } else {
 
             textHeadProbeg.setTextColor(0xFFFFFFFF);
+            textHeadTehOsmotr.setTextColor(0xFFFFFFFF);
 
                 btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -141,6 +157,20 @@ public class InfoCar extends AppCompatActivity {
                 });
         }
 
+    }
+
+    private void dialogShow() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(InfoCar.this);
+        builder.setTitle("Информация будет доступна в полном отчете")
+                .setCancelable(false)
+                .setNegativeButton("ОК",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 
