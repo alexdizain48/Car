@@ -33,8 +33,8 @@ import java.util.List;
 
 public class InfoCar extends AppCompatActivity {
 
-    ExpandableLinearLayout expanableTehnHarakt, expanableProbeg, expanableTehOsmotr;
-    CardView btnOpenTehnHarakter, btnOpenProbeg, btnOpenTehOsmotr;
+    ExpandableLinearLayout expanableTehnHarakt, expanableProbeg, expanableTehOsmotr, expanableDtp;
+    CardView btnOpenTehnHarakter, btnOpenProbeg, btnOpenTehOsmotr, btnOpenDtp;
 
     RecyclerView recycleTehOsmotr;
     AdapterTehOsmotr mAdapterTehOsmotr;
@@ -46,7 +46,7 @@ public class InfoCar extends AppCompatActivity {
     ImageView ic_tehosmotr, is_speed;
     private Boolean payment;
     Button buy;
-    TextView textHeadProbeg, textHeadTehOsmotr;
+    TextView textHeadProbeg, textHeadTehOsmotr, textHeadDtp;
 
 
     @Override
@@ -56,19 +56,20 @@ public class InfoCar extends AppCompatActivity {
         //else {
             setContentView(R.layout.activity_info_car);
 
-
-
             textHeadProbeg = (TextView) findViewById(R.id.textHeadProbeg);
             textHeadTehOsmotr = (TextView) findViewById(R.id.textHeadTehOsmotr);
+            textHeadDtp = (TextView) findViewById(R.id.textHeadDtp);
 
             expanableTehnHarakt = (ExpandableLinearLayout) findViewById(R.id.expanableTehnHarakt);
             expanableProbeg = (ExpandableLinearLayout) findViewById(R.id.expanableProbeg);
             expanableTehOsmotr = (ExpandableLinearLayout) findViewById(R.id.expanableTehOsmotr);
+            expanableDtp = (ExpandableLinearLayout) findViewById(R.id.expanableDtp);
 
             buy = (Button) findViewById(R.id.buy);
             btnOpenTehnHarakter = (CardView) findViewById(R.id.btnOpenTehnHarakter);
             btnOpenProbeg = (CardView) findViewById(R.id.btnOpenProbeg);
             btnOpenTehOsmotr = (CardView) findViewById(R.id.btnOpenTehOsmotr);
+            btnOpenDtp = (CardView) findViewById(R.id.btnOpenDtp);
 
             btnOpenTehnHarakter.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -88,7 +89,6 @@ public class InfoCar extends AppCompatActivity {
                 buy.setVisibility(View.GONE);
             }
         });
-
 
     }
 
@@ -116,6 +116,7 @@ public class InfoCar extends AppCompatActivity {
 
             textHeadProbeg.setTextColor(0xFF680A19);
             textHeadTehOsmotr.setTextColor(0xFF680A19);
+            textHeadDtp.setTextColor(0xFF680A19);
 
             btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,6 +125,12 @@ public class InfoCar extends AppCompatActivity {
                 }
             });
             btnOpenTehOsmotr.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialogShow();
+                }
+            });
+            btnOpenDtp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     dialogShow();
@@ -141,6 +148,7 @@ public class InfoCar extends AppCompatActivity {
 
             textHeadProbeg.setTextColor(0xFFFFFFFF);
             textHeadTehOsmotr.setTextColor(0xFFFFFFFF);
+            textHeadDtp.setTextColor(0xFFFFFFFF);
 
                 btnOpenProbeg.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -153,6 +161,13 @@ public class InfoCar extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         expanableTehOsmotr.toggle();
+                    }
+                });
+
+                btnOpenDtp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        expanableDtp.toggle();
                     }
                 });
         }
