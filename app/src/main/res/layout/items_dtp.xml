@@ -6,7 +6,6 @@
               android:orientation="vertical">
 
     <TextView
-        android:id="@+id/dtpData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -15,14 +14,13 @@
         android:textSize="12sp"/>
 
     <TextView
-        android:id="@+id/dtpData1"
+        android:id="@+id/dtpData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorWhite"
         android:textSize="15sp"/>
 
     <TextView
-        android:id="@+id/dtpTip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -31,35 +29,38 @@
         android:textSize="12sp"/>
 
     <TextView
-        android:id="@+id/dtpTip1"
+        android:id="@+id/dtpTip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorWhite"
         android:textSize="15sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Регион проишествия"
+        android:textColor="@color/colorGreyText"
+        android:textSize="12sp"/>
 
     <TextView
         android:id="@+id/dtpRegionProishestwija"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Регион проишествия"
-        android:textColor="@color/colorGreyText"
-        android:textSize="12sp"/>
-
-    <TextView
-        android:id="@+id/dtpRegionProishestwija1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:textColor="@color/colorWhite"
         android:textSize="15sp"/>
 
     <TextView
-        android:id="@+id/dtpImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Регион проишествия"
         android:textColor="@color/colorGreyText"
         android:textSize="12sp"/>
+
+    <ImageView
+        android:id="@+id/dtpImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

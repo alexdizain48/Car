@@ -137,13 +137,6 @@ public class InfoCar extends AppCompatActivity {
                 }
             });
 
-            /*overlayColorTehosmotr = getResources().getDrawable(R.drawable.tehosmotr);
-            wrap = DrawableCompat.wrap(overlayColorTehosmotr);
-            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));
-            overlayColor = getResources().getDrawable(R.drawable.probeg);
-            wrap = DrawableCompat.wrap(overlayColor);
-            DrawableCompat.setTint(wrap, getResources().getColor(R.color.colorAccent));*/
-
         } else {
 
             textHeadProbeg.setTextColor(0xFFFFFFFF);

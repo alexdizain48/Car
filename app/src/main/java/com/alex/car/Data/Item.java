@@ -25,8 +25,10 @@ public class Item {
     private String osagoSerija;
     private String osagoNumber;
     private String osagoStrahCompany;
+    //ДТП
+    public List<Dtp> dtp;
 
-    public Item(String totalHeaderKomplektacija, String totalMarka, String totalVIN, String tatalGod, String totalTipDvigat, String totalMochnost, String totalZavodIzgotovitel, String totalTipCusova, String totalObjemDvigat, List<TehOsmotr> texOsmotr, String probegDataFiksacii, String probegZnachenie, String osagoHeader, String osagoSerija, String osagoNumber, String osagoStrahCompany) {
+    public Item(String totalHeaderKomplektacija, String totalMarka, String totalVIN, String tatalGod, String totalTipDvigat, String totalMochnost, String totalZavodIzgotovitel, String totalTipCusova, String totalObjemDvigat, List<TehOsmotr> texOsmotr, String probegDataFiksacii, String probegZnachenie, String osagoHeader, String osagoSerija, String osagoNumber, String osagoStrahCompany, List<Dtp> dtp) {
         this.totalHeaderKomplektacija = totalHeaderKomplektacija;
         this.totalMarka = totalMarka;
         this.totalVIN = totalVIN;
@@ -43,6 +45,7 @@ public class Item {
         this.osagoSerija = osagoSerija;
         this.osagoNumber = osagoNumber;
         this.osagoStrahCompany = osagoStrahCompany;
+        this.dtp = dtp;
     }
 
     public String getTotalHeaderKomplektacija() {
@@ -171,5 +174,13 @@ public class Item {
 
     public void setOsagoStrahCompany(String osagoStrahCompany) {
         this.osagoStrahCompany = osagoStrahCompany;
+    }
+
+    public List<Dtp> getDtp() {
+        return dtp;
+    }
+
+    public void setDtp(List<Dtp> dtp) {
+        this.dtp = dtp;
     }
 }
