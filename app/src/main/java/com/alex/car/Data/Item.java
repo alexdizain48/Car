@@ -1,12 +1,10 @@
 package com.alex.car.Data;
 
-
 import java.util.List;
 
 public class Item {
 
     //Общие данные
-    private  String totalHeaderKomplektacija;
     private String totalMarka;
     private String totalVIN;
     private String tatalGod;
@@ -21,15 +19,17 @@ public class Item {
     private String probegDataFiksacii;
     private String probegZnachenie;
     //ОСАГО
-    private String osagoHeader;
     private String osagoSerija;
     private String osagoNumber;
     private String osagoStrahCompany;
     //ДТП
     public List<Dtp> dtp;
 
-    public Item(String totalHeaderKomplektacija, String totalMarka, String totalVIN, String tatalGod, String totalTipDvigat, String totalMochnost, String totalZavodIzgotovitel, String totalTipCusova, String totalObjemDvigat, List<TehOsmotr> texOsmotr, String probegDataFiksacii, String probegZnachenie, String osagoHeader, String osagoSerija, String osagoNumber, String osagoStrahCompany, List<Dtp> dtp) {
-        this.totalHeaderKomplektacija = totalHeaderKomplektacija;
+    public Item() {
+
+    }
+
+    public Item(String totalMarka, String totalVIN, String tatalGod, String totalTipDvigat, String totalMochnost, String totalZavodIzgotovitel, String totalTipCusova, String totalObjemDvigat, List<TehOsmotr> texOsmotr, String probegDataFiksacii, String probegZnachenie, String osagoSerija, String osagoNumber, String osagoStrahCompany, List<Dtp> dtp) {
         this.totalMarka = totalMarka;
         this.totalVIN = totalVIN;
         this.tatalGod = tatalGod;
@@ -41,19 +41,10 @@ public class Item {
         this.texOsmotr = texOsmotr;
         this.probegDataFiksacii = probegDataFiksacii;
         this.probegZnachenie = probegZnachenie;
-        this.osagoHeader = osagoHeader;
         this.osagoSerija = osagoSerija;
         this.osagoNumber = osagoNumber;
         this.osagoStrahCompany = osagoStrahCompany;
         this.dtp = dtp;
-    }
-
-    public String getTotalHeaderKomplektacija() {
-        return totalHeaderKomplektacija;
-    }
-
-    public void setTotalHeaderKomplektacija(String totalHeaderKomplektacija) {
-        this.totalHeaderKomplektacija = totalHeaderKomplektacija;
     }
 
     public String getTotalMarka() {
@@ -142,14 +133,6 @@ public class Item {
 
     public void setProbegZnachenie(String probegZnachenie) {
         this.probegZnachenie = probegZnachenie;
-    }
-
-    public String getOsagoHeader() {
-        return osagoHeader;
-    }
-
-    public void setOsagoHeader(String osagoHeader) {
-        this.osagoHeader = osagoHeader;
     }
 
     public String getOsagoSerija() {

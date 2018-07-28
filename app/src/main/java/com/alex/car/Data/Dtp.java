@@ -4,10 +4,9 @@ import android.widget.ImageView;
 
 public class Dtp {
 
-    private String dtpData, dtpTip, dtpRegionProishestwija;
-    private ImageView dtpImg;
+    private String dtpData, dtpTip, dtpRegionProishestwija, dtpImg;
 
-    public Dtp(String dtpData, String dtpTip, String dtpRegionProishestwija, ImageView dtpImg) {
+    public Dtp(String dtpData, String dtpTip, String dtpRegionProishestwija, String dtpImg) {
         this.dtpData = dtpData;
         this.dtpTip = dtpTip;
         this.dtpRegionProishestwija = dtpRegionProishestwija;
@@ -38,11 +37,11 @@ public class Dtp {
         this.dtpRegionProishestwija = dtpRegionProishestwija;
     }
 
-    public ImageView getDtpImg() {
+    public String getDtpImg() {
         return dtpImg;
     }
 
-    public void setDtpImg(ImageView dtpImg) {
+    public void setDtpImg(String dtpImg) {
         this.dtpImg = dtpImg;
     }
 }

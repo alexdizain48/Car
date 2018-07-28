@@ -1,9 +1,11 @@
 package com.alex.car.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,10 +38,16 @@ public class AdapterDtp extends RecyclerView.Adapter<AdapterDtp.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        String imageString = dtpList.get(position).getDtpImg();
+
         holder.dtpData.setText(dtpList.get(position).getDtpData());
         holder.dtpTip.setText(dtpList.get(position).getDtpTip());
         holder.dtpRegionProishestwija.setText(dtpList.get(position).getDtpRegionProishestwija());
-       // holder.dtpImg.setImageBitmap(BitmapFactory.decodeByteArray());
+
+        byte[] imageBytes = Base64.decode(imageString, Base64.DEFAULT);
+        Bitmap decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+        holder.dtpImg.setImageBitmap(decodedImage);
 
     }
 
@@ -62,4 +70,10 @@ public class AdapterDtp extends RecyclerView.Adapter<AdapterDtp.ViewHolder> {
             dtpImg = (ImageView) itemView.findViewById(R.id.dtpImg);
         }
     }
+
+   /* private void loadImg(String imageString) {
+        byte[] imageBytes = Base64.decode(imageString, Base64.DEFAULT);
+        Bitmap decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+        firstImg.setImageBitmap(decodedImage);
+    }*/
 }
