@@ -17,7 +17,7 @@
             android:id="@+id/main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|snap"
+            app:layout_scrollFlags="scroll"
             android:fitsSystemWindows="true"
             app:layout_collapseMode="pin"
             app:contentInsetStartWithNavigation="0dp"
@@ -150,6 +150,7 @@
                     app:cardCornerRadius="3dp">
 
                         <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constrLayoutTehHaract"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
@@ -174,7 +175,7 @@
                                 android:layout_marginBottom="9dp"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="7dp"
-                                android:text="Тех. характеристики"
+                                android:text="Тех.характеристики"
                                 android:textColor="@color/colorWhite"
                                 android:textSize="14sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -590,7 +591,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     app:ael_duration="200"
-                    app:ael_expanded="false"
+                    app:ael_expanded="true"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:paddingEnd="5dp"

@@ -19,11 +19,11 @@ import java.util.List;
 
 public class AdapterDtp extends RecyclerView.Adapter<AdapterDtp.ViewHolder> {
 
-    private List<Dtp> dtpList;
+    private List<Dtp> mDtpList;
     private Context context;
 
-    public AdapterDtp(List<Dtp> dtpList, Context context) {
-        this.dtpList = dtpList;
+    public AdapterDtp(List<Dtp> mDtpList, Context context) {
+        this.mDtpList = mDtpList;
         this.context = context;
     }
 
@@ -33,33 +33,33 @@ public class AdapterDtp extends RecyclerView.Adapter<AdapterDtp.ViewHolder> {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.items_dtp, parent,false);
         context = parent.getContext();
-        return  new AdapterDtp.ViewHolder(view);
+        return  new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        String imageString = dtpList.get(position).getDtpImg();
+       // String imageString = dtpList.get(position).getDtpImg();
 
-        holder.dtpData.setText(dtpList.get(position).getDtpData());
-        holder.dtpTip.setText(dtpList.get(position).getDtpTip());
-        holder.dtpRegionProishestwija.setText(dtpList.get(position).getDtpRegionProishestwija());
+        holder.dtpData.setText(mDtpList.get(position).getDtpData());
+        holder.dtpTip.setText(mDtpList.get(position).getDtpTip());
+        holder.dtpRegionProishestwija.setText(mDtpList.get(position).getDtpRegionProishestwija());
 
-        byte[] imageBytes = Base64.decode(imageString, Base64.DEFAULT);
+       /* byte[] imageBytes = Base64.decode(imageString, Base64.DEFAULT);
         Bitmap decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-        holder.dtpImg.setImageBitmap(decodedImage);
+        holder.dtpImg.setImageBitmap(decodedImage);*/
 
     }
 
     @Override
     public int getItemCount() {
-        return dtpList.size();
+        return mDtpList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView dtpData, dtpTip, dtpRegionProishestwija;
-        private ImageView dtpImg;
+        //private ImageView dtpImg;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -67,13 +67,7 @@ public class AdapterDtp extends RecyclerView.Adapter<AdapterDtp.ViewHolder> {
             dtpData = (TextView) itemView.findViewById(R.id.dtpData);
             dtpTip = (TextView) itemView.findViewById(R.id.dtpTip);
             dtpRegionProishestwija = (TextView) itemView.findViewById(R.id.dtpRegionProishestwija);
-            dtpImg = (ImageView) itemView.findViewById(R.id.dtpImg);
+            //dtpImg = (ImageView) itemView.findViewById(R.id.dtpImg);
         }
     }
-
-   /* private void loadImg(String imageString) {
-        byte[] imageBytes = Base64.decode(imageString, Base64.DEFAULT);
-        Bitmap decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-        firstImg.setImageBitmap(decodedImage);
-    }*/
 }

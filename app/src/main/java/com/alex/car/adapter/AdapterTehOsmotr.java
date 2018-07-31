@@ -66,5 +66,6 @@ public class AdapterTehOsmotr extends RecyclerView.Adapter<AdapterTehOsmotr.View
             tehOsmDataDiagnost = (TextView) itemView.findViewById(R.id.tehOsmDataDiagnost1);
             tehOsmSrokDeistvija = (TextView) itemView.findViewById(R.id.tehOsmSrokDeistvija1);
         }
+
     }
 }
